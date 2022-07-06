@@ -9,6 +9,7 @@ import SingleProduct from './pages/SingleProduct'
 import {CartContext} from './CartContext'
 import { useEffect,useState } from 'react'
 import { getCart,storeCart } from './helpers'
+import NoPageFound from './components/NoPageFound'
 
 
 const App=()=>{
@@ -40,6 +41,7 @@ const App=()=>{
                     <Route path="/products" element = {<ProductsPage/>} ></Route>
                     <Route path="/products/:_id" element={<SingleProduct/>}></Route>
                     <Route path="/cart" element = {<Cart/>} ></Route>
+                    <Route path="*" element = {<NoPageFound/>} ></Route>
                 </Routes>
             </CartContext.Provider>
         </Router>
